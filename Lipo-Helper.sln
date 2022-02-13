@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lipo-Helper", "Lipo-Helper\Lipo-Helper.csproj", "{65A9B190-04B8-4718-99C4-80F36A897F8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65A9B190-04B8-4718-99C4-80F36A897F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A9B190-04B8-4718-99C4-80F36A897F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A9B190-04B8-4718-99C4-80F36A897F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A9B190-04B8-4718-99C4-80F36A897F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31554B9B-1B9C-47F4-9B6F-BAE38372E50D}
+	EndGlobalSection
+EndGlobal
