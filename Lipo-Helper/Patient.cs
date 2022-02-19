@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Lipo_Helper
 {
-    internal class Patient
+    public class Patient
     {
         public string? FirstName;  //фамилия
         public string? LastName;   //имя
-        public string? Sex;        //пол
+        public string? Gender;     //пол
         public int Age;            //возраст 
         public int SP;             //артериальное давление 
-        public double OC;          //общий холестерин
+        public double TC;          //общий холестерин
         public double LL;          //липиды низкой плотности
         public string? Smoking;    //курение (да/нет)
         public int SCORE;          //индекс SCORE из калькулятора
@@ -34,8 +34,29 @@ namespace Lipo_Helper
             public string TIA;     //транзиторная ишемичная атака
             public string PAD;     //болезнь периферических артерий
             public int AS;         //атеросклероз (процент стеноза артерий)
+
         }
 
+        public Patient(string firstname, string gender, int age, double tc, int sp, string smoking, int score)
+        {
+            Console.WriteLine("First name:");
+            FirstName = Console.ReadLine();
+            Console.WriteLine("Gender:");
+            Gender = Console.ReadLine();
+            Console.WriteLine("Age:");
+            Age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("TC");
+            TC = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("SP");
+            SP = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Are you smoking?");
+            Smoking = Console.ReadLine();
+            SCORE = 0;
+        }
 
+        public Patient()
+        {
+
+        }
     }
 }
