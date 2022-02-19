@@ -14,9 +14,8 @@ namespace Lipo_Helper
             ScoreScale risk = new ();             
             SCORE = risk.CountRisk();              
             Console.WriteLine(SCORE);             
-            Patient Newpatient = new Patient ();
-            
-            double ll = Newpatient.LL;
+            Patient patient = new("n", 0, 0, "n", 0.0, "n", "n", 0, "n", "n", "n", "n", "n", 0);
+
 
 
         }

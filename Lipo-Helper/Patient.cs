@@ -20,7 +20,7 @@ namespace Lipo_Helper
         public int Type;           //тип
         public int Duration;       //продолжительность
         public string? DTO;        //повреждение органов(да/нет)
-        public int GFR;            //скорость клубочковой фильтрации
+        public double GFR;         //скорость клубочковой фильтрации
         public string? FH;         //семейная гиперхолистеринемия (да/нет)
         public string? ACS;        //острый коронарный синдром (ИМ, НС)
         public int RepACS;         //повторное ОКС
@@ -32,23 +32,30 @@ namespace Lipo_Helper
         public int PAS;            //процент стеноза артерий
 
 
-        public Patient()
+        public Patient(string gender, int age, double tc, int sp, string smoking)
         {
             Console.WriteLine("Gender:");
-            this.Gender = Console.ReadLine();
+            Gender = gender;
+            Gender = Console.ReadLine();
             Console.WriteLine("Age:");
+            Age = age;
             this.Age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("TC");
+            TC = tc;
             this.TC = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("SP");
+            SP = sp;
             this.SP = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Are you smoking?");
+            Smoking = smoking; 
             this.Smoking = Console.ReadLine();
         }
 
-        /*public Patient()
+        public Patient(string diabetes, int type, int duration, string DTO, double gfr, string fh, string acs, int repASC, 
+                       string cad, string stroke, string tia, string pad, string As, int pas)
         {
             Console.WriteLine("Diabetes: ");
+            Diabetes = diabetes;
             Diabetes = Console.ReadLine();
             if (Diabetes == "yes")
             {
@@ -61,7 +68,7 @@ namespace Lipo_Helper
             }
 
             Console.WriteLine("Glomerular Filtration Rate: ");
-            GFR = Convert.ToInt32(Console.ReadLine());
+            GFR = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Familiar HH: ");
             FH = Console.ReadLine();
             Console.WriteLine("Acute Coronary Syndrome: ");
@@ -88,7 +95,7 @@ namespace Lipo_Helper
                 PAS = Convert.ToInt32(Console.ReadLine());
             }
 
-        }*/
+        }
 
     }
 }
