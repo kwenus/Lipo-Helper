@@ -19,8 +19,7 @@ namespace Lipo_Helper
         public string? Diabetes;   //сахарный диабет (да/нет)
         public int Type;           //тип
         public int Duration;       //продолжительность
-        public string? DTO;        //повреждение органов(да/нет)
-        public double GFR;         //скорость клубочковой фильтрации
+        public int GFR;            //скорость клубочковой фильтрации
         public string? FH;         //семейная гиперхолистеринемия (да/нет)
         public string? ACS;        //острый коронарный синдром (ИМ, НС)
         public int RepACS;         //повторное ОКС
@@ -32,26 +31,23 @@ namespace Lipo_Helper
         public int PAS;            //процент стеноза артерий
 
 
-        public Patient(string gender, int age, double tc, int sp, string smoking)
+        public Patient(string gender, int age, double tc, double ll, int sp, string smoking)
         {
             Console.WriteLine("Gender:");
-            Gender = gender;
             Gender = Console.ReadLine();
             Console.WriteLine("Age:");
-            Age = age;
-            this.Age = Convert.ToInt32(Console.ReadLine());
+            Age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("TC");
-            TC = tc;
-            this.TC = Convert.ToDouble(Console.ReadLine());
+            TC = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("LL");
+            LL = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("SP");
-            SP = sp;
-            this.SP = Convert.ToInt32(Console.ReadLine());
+            SP = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Are you smoking?");
-            Smoking = smoking; 
-            this.Smoking = Console.ReadLine();
+            Smoking = Console.ReadLine();
         }
 
-        public Patient(string diabetes, int type, int duration, string DTO, double gfr, string fh, string acs, int repASC, 
+        public Patient(string diabetes, int type, int duration, int gfr, string fh, string acs, int repASC, 
                        string cad, string stroke, string tia, string pad, string As, int pas)
         {
             Console.WriteLine("Diabetes: ");
@@ -63,12 +59,10 @@ namespace Lipo_Helper
                 Type = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Duration years: ");
                 Duration = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Damage of Target Organs: ");
-                DTO = Console.ReadLine();
             }
 
             Console.WriteLine("Glomerular Filtration Rate: ");
-            GFR = Convert.ToDouble(Console.ReadLine());
+            GFR = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Familiar HH: ");
             FH = Console.ReadLine();
             Console.WriteLine("Acute Coronary Syndrome: ");

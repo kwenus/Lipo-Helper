@@ -49,7 +49,7 @@ namespace Lipo_Helper
             cell[8] = cell[5] with { TCmin = 7.0, TCmax = 7.9};
             cell[9] = cell[5] with { TCmin = 8.0, TCmax = 12.0};
 
-            Patient patient = new ("n", 0, 0.0, 0, "n"); 
+            Patient patient = new ("n", 0, 0.0, 0.0, 0, "n"); 
             int score = 0;
 
 
