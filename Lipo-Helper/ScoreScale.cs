@@ -39,7 +39,7 @@ namespace Lipo_Helper
             const int size = 400;
             Scale[] cell = new Scale[size];
             cell[0] = new ();
-            cell[1] = cell[0] with { TCmin = 5.0, TCmax = 5.9 };
+            cell[1] = cell[0] with { TCmin = 5.0, TCmax = 5.9};
             cell[2] = cell[0] with { TCmin = 6.0, TCmax = 6.9};
             cell[3] = cell[0] with { TCmin = 7.0, TCmax = 7.9};
             cell[4] = cell[0] with { TCmin = 8.0, TCmax = 12.0};
@@ -50,22 +50,15 @@ namespace Lipo_Helper
             cell[9] = cell[5] with { TCmin = 8.0, TCmax = 12.0};
 
             Patient patient = new ();
-
-            string firstname = patient.FirstName;
-            string gender = patient.Gender;
-            string smoking = patient.Smoking;
-            int age = patient.Age;
-            double tc = patient.TC;
-            int sp = patient.SP;
             int score = 0;
 
 
             for (int i = 0; i < size; i++)
             {
-                if (gender == cell[i].Gender && smoking == cell[i].Smoking
-                    && age > cell[i].AgeMin && age < cell[i].AgeMax
-                    && tc > cell[i].TCmin && tc < cell[i].TCmax
-                    && sp > cell[i].SPmin && sp < cell[i].SPmax)
+                if (patient.Gender == cell[i].Gender && patient.Smoking == cell[i].Smoking
+                    && patient.Age > cell[i].AgeMin && patient.Age < cell[i].AgeMax
+                    && patient.TC > cell[i].TCmin && patient.TC < cell[i].TCmax
+                    && patient.SP > cell[i].SPmin && patient.SP < cell[i].SPmax)
                 {
                     score = cell[i].Risk;
                     //Console.WriteLine($"{patient.FirstName} your risk is {score}%");

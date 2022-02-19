@@ -11,9 +11,14 @@ namespace Lipo_Helper
         static void Main (string[] args)
         {
             int SCORE;
-            ScoreScale patient = new ();
-            SCORE = patient.CountRisk();
-            Console.WriteLine(SCORE);
+            ScoreScale risk = new ();             
+            SCORE = risk.CountRisk();              
+            Console.WriteLine(SCORE);             
+            Patient Newpatient = new Patient ();
+            
+            double ll = Newpatient.LL;
+
+
         }
     }
 }

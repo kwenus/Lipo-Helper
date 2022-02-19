@@ -34,18 +34,20 @@ namespace Lipo_Helper
 
         public Patient()
         {
-            Console.WriteLine("First name:");
-            FirstName = Console.ReadLine();
             Console.WriteLine("Gender:");
-            Gender = Console.ReadLine();
+            this.Gender = Console.ReadLine();
             Console.WriteLine("Age:");
-            Age = Convert.ToInt32(Console.ReadLine());
+            this.Age = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("TC");
-            TC = Convert.ToDouble(Console.ReadLine());
+            this.TC = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("SP");
-            SP = Convert.ToInt32(Console.ReadLine());
+            this.SP = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Are you smoking?");
-            Smoking = Console.ReadLine();
+            this.Smoking = Console.ReadLine();
+        }
+
+        /*public Patient()
+        {
             Console.WriteLine("Diabetes: ");
             Diabetes = Console.ReadLine();
             if (Diabetes == "yes")
@@ -85,7 +87,9 @@ namespace Lipo_Helper
                 Console.WriteLine("Percentage of Stenosis: ");
                 PAS = Convert.ToInt32(Console.ReadLine());
             }
-        }
+
+        }*/
+
     }
 }
 
