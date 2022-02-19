@@ -16,28 +16,23 @@ namespace Lipo_Helper
         public double TC;          //общий холестерин
         public double LL;          //липиды низкой плотности
         public string? Smoking;    //курение (да/нет)
-        public int SCORE;          //индекс SCORE из калькулятора
-        public struct Diabetes     //сахарный диабет (тип, продолжительность, повреждение органов (да/нет))
-        {
-            public int Type;
-            public int Duration;
-            public string? DOM;
-        }
+        public string? Diabetes;   //сахарный диабет (да/нет)
+        public int Type;           //тип
+        public int Duration;       //продолжительность
+        public string? DTO;        //повреждение органов(да/нет)
         public int GFR;            //скорость клубочковой фильтрации
         public string? FH;         //семейная гиперхолистеринемия (да/нет)
-        public struct CD           //сердечно-сосудистая патология (да/нет):
-        {
-            public string ACS;     //острый коронарный синдром (ИМ, НС)
-            public string RepACS;  //повторное ОКС в течение 2 лет
-            public string CAD;     //коронарная недостаточность
-            public string Stroke;  //инсульт
-            public string TIA;     //транзиторная ишемичная атака
-            public string PAD;     //болезнь периферических артерий
-            public int AS;         //атеросклероз (процент стеноза артерий)
+        public string? ACS;        //острый коронарный синдром (ИМ, НС)
+        public int RepACS;         //повторное ОКС
+        public string? CAD;        //коронарная недостаточность
+        public string? Stroke;     //инсульт
+        public string? TIA;        //транзиторная ишемическая атака
+        public string? PAD;        //болезнь периферических артерий
+        public string? AS;         //атеросклероз
+        public int PAS;            //процент стеноза артерий
 
-        }
 
-        public Patient(string firstname, string gender, int age, double tc, int sp, string smoking, int score)
+        public Patient()
         {
             Console.WriteLine("First name:");
             FirstName = Console.ReadLine();
@@ -51,12 +46,46 @@ namespace Lipo_Helper
             SP = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Are you smoking?");
             Smoking = Console.ReadLine();
-            SCORE = 0;
-        }
+            Console.WriteLine("Diabetes: ");
+            Diabetes = Console.ReadLine();
+            if (Diabetes == "yes")
+            {
+                Console.WriteLine("Type: ");
+                Type = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Duration years: ");
+                Duration = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Damage of Target Organs: ");
+                DTO = Console.ReadLine();
+            }
 
-        public Patient()
-        {
+            Console.WriteLine("Glomerular Filtration Rate: ");
+            GFR = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Familiar HH: ");
+            FH = Console.ReadLine();
+            Console.WriteLine("Acute Coronary Syndrome: ");
+            ACS = Console.ReadLine();
+            if (ACS == "yes")
+            {
+                Console.WriteLine("How many yaers ago?");
+                RepACS = Convert.ToInt32(Console.ReadLine());
+            }
 
+            Console.WriteLine("Coronary Artery Disease: ");
+            CAD = Console.ReadLine();
+            Console.WriteLine("Stroke: ");
+            Stroke = Console.ReadLine();
+            Console.WriteLine("Transient Ischemic Attack: ");
+            TIA = Console.ReadLine();
+            Console.WriteLine("Peripheral Artery Disease: ");
+            PAD = Console.ReadLine();
+            Console.WriteLine("Atherosclerosis: ");
+            AS = Console.ReadLine();
+            if (AS == "yes")
+            {
+                Console.WriteLine("Percentage of Stenosis: ");
+                PAS = Convert.ToInt32(Console.ReadLine());
+            }
         }
     }
 }
+

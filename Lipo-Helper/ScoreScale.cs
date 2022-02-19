@@ -8,7 +8,7 @@ namespace Lipo_Helper
 {
     public class ScoreScale
     {
-        struct Scale
+        public struct Scale
         {
             public string Gender;
             public string Smoking;
@@ -34,20 +34,20 @@ namespace Lipo_Helper
             }
         }
 
-        static void Main(string[] args)
+        public int CountRisk()
         {
             const int size = 400;
             Scale[] cell = new Scale[size];
             cell[0] = new ();
             cell[1] = cell[0] with { TCmin = 5.0, TCmax = 5.9 };
-            cell[2] = cell[0] with { TCmin = 6.0, TCmax = 6.9 };
-            cell[3] = cell[0] with { TCmin = 7.0, TCmax = 7.9 };
-            cell[4] = cell[0] with { TCmin = 8.0, TCmax = 12.0 };
-            cell[5] = cell[0] with { SPmin = 140, SPmax = 159 };
-            cell[6] = cell[5] with { TCmin = 5.0, TCmax = 5.9 };
-            cell[7] = cell[5] with { TCmin = 6.0, TCmax = 6.9 };
-            cell[8] = cell[5] with { TCmin = 7.0, TCmax = 7.9 };
-            cell[9] = cell[5] with { TCmin = 8.0, TCmax = 12.0 };
+            cell[2] = cell[0] with { TCmin = 6.0, TCmax = 6.9};
+            cell[3] = cell[0] with { TCmin = 7.0, TCmax = 7.9};
+            cell[4] = cell[0] with { TCmin = 8.0, TCmax = 12.0};
+            cell[5] = cell[0] with { SPmin = 140, SPmax = 159};
+            cell[6] = cell[5] with { TCmin = 5.0, TCmax = 5.9};
+            cell[7] = cell[5] with { TCmin = 6.0, TCmax = 6.9};
+            cell[8] = cell[5] with { TCmin = 7.0, TCmax = 7.9};
+            cell[9] = cell[5] with { TCmin = 8.0, TCmax = 12.0};
 
             Patient patient = new ();
 
@@ -57,7 +57,7 @@ namespace Lipo_Helper
             int age = patient.Age;
             double tc = patient.TC;
             int sp = patient.SP;
-            int score = patient.SCORE;
+            int score = 0;
 
 
             for (int i = 0; i < size; i++)
@@ -68,10 +68,11 @@ namespace Lipo_Helper
                     && sp > cell[i].SPmin && sp < cell[i].SPmax)
                 {
                     score = cell[i].Risk;
-                    Console.WriteLine($"{patient.FirstName} your risk is {score}%");
+                    //Console.WriteLine($"{patient.FirstName} your risk is {score}%");
                     break;
                 }
             }
+            return score;
         }
     }
 }
