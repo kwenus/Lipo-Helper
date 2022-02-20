@@ -19,7 +19,7 @@ namespace Lipo_Helper
         public string? Diabetes;   //сахарный диабет (да/нет)
         public int Type;           //тип
         public int Duration;       //продолжительность
-        public int GFR;            //скорость клубочковой фильтрации
+        public int GFR;         //скорость клубочковой фильтрации
         public string? FH;         //семейная гиперхолистеринемия (да/нет)
         public string? ACS;        //острый коронарный синдром (ИМ, НС)
         public int RepACS;         //повторное ОКС
@@ -33,6 +33,7 @@ namespace Lipo_Helper
 
         public Patient(string gender, int age, double tc, double ll, int sp, string smoking)
         {
+            { Gender = gender; age = age;}
             Console.WriteLine("Gender:");
             Gender = Console.ReadLine();
             Console.WriteLine("Age:");
@@ -62,7 +63,7 @@ namespace Lipo_Helper
             }
 
             Console.WriteLine("Glomerular Filtration Rate: ");
-            GFR = Convert.ToInt32(Console.ReadLine());
+            GFR = Convert.Toint(Console.ReadLine());
             Console.WriteLine("Familiar HH: ");
             FH = Console.ReadLine();
             Console.WriteLine("Acute Coronary Syndrome: ");
