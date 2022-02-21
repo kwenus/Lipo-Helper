@@ -8,47 +8,41 @@ namespace Lipo_Helper
 {
     public class Patient
     {
-        public string? FirstName;  //фамилия
-        public string? LastName;   //имя
-        public string? Gender;     //пол
-        public int Age;            //возраст 
-        public int SP;             //артериальное давление 
-        public double TC;          //общий холестерин
-        public double LL;          //липиды низкой плотности
-        public string? Smoking;    //курение (да/нет)
-        public string? Diabetes;   //сахарный диабет (да/нет)
-        public int Type;           //тип
-        public int Duration;       //продолжительность
-        public int GFR;         //скорость клубочковой фильтрации
-        public string? FH;         //семейная гиперхолистеринемия (да/нет)
-        public string? ACS;        //острый коронарный синдром (ИМ, НС)
-        public int RepACS;         //повторное ОКС
-        public string? CAD;        //коронарная недостаточность
-        public string? Stroke;     //инсульт
-        public string? TIA;        //транзиторная ишемическая атака
-        public string? PAD;        //болезнь периферических артерий
-        public string? AS;         //атеросклероз
-        public int PAS;            //процент стеноза артерий
+        public string? firstName;  
+        public string lastName;   
+        public string gender;     
+        public int age;            
+        public int systolicPressure;             
+        public double totalCholesterol;         
+        public double lowDensityLipo;         
+        public string smoking;    
+        public bool diabetes;   
+        public int diabetesType;   
+        public int diabetesDuration; 
+        public int glomerularFiltrationRate; 
+        public bool familialHypercholesterolemia;
+        public bool acuteCoronarySyndrome;
+        public bool repetiveAuteCoronaySyndrome;
+        public bool coronaryArteryDisease;  
+        public bool stroke;    
+        public bool transientIschemicAttack; 
+        public bool peripheralArteryDisease; 
+        public bool atherosclerosis;
+        public int percentageArteryStenosis;   
 
 
-        public Patient(string gender, int age, double tc, double ll, int sp, string smoking)
+        public Patient(string genderParam, int ageParam, int systolicPresParam, 
+                       double tcParam, double ldParam, string smokingParam)
         {
-            { Gender = gender; age = age;}
-            Console.WriteLine("Gender:");
-            Gender = Console.ReadLine();
-            Console.WriteLine("Age:");
-            Age = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("TC");
-            TC = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("LL");
-            LL = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("SP");
-            SP = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Are you smoking?");
-            Smoking = Console.ReadLine();
+            gender = genderParam;
+            age = ageParam;
+            systolicPressure = systolicPresParam;
+            totalCholesterol = tcParam;
+            lowDensityLipo = ldParam;
+            smoking = smokingParam;
         }
 
-        public Patient(string diabetes, int type, int duration, int gfr, string fh, string acs, int repASC, 
+        /*public Patient(string diabetes, int type, int duration, int gfr, string fh, string acs, int repASC, 
                        string cad, string stroke, string tia, string pad, string As, int pas)
         {
             Console.WriteLine("Diabetes: ");
@@ -90,7 +84,7 @@ namespace Lipo_Helper
                 PAS = Convert.ToInt32(Console.ReadLine());
             }
 
-        }
+        }*/
 
     }
 }

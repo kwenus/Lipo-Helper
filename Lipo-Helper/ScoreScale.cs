@@ -8,26 +8,39 @@ namespace Lipo_Helper
 {
     public class ScoreScale
     {
-            public string? Gender;
-            public string? Smoking;
-            public int AgeMin;
-            public int AgeMax;
-            public int SPmin;
-            public int SPmax;
-            public double TCmin;
-            public double TCmax;
-            public int Risk;
+        public string? scaleGender;
+        public string scaleSmoking;
+        public int ageMin;
+        public int ageMax;
+        public int systolicPressureMin;
+        public int systolicPressureMax;
+        public double totalCholesterolMin;
+        public double totalCholesterolMax;
+        public int scaleRisk;
 
-        //Patient pat = new("n", 0, 0, 0, 0, "n");
-        public bool Check (Patient patient)
-        { 
-            if (Gender == pat.Gender && Smoking == pat.Smoking && AgeMax > pat.Age && AgeMin < pat.Age &&
-                SPmax > pat.SP && SPmin < pat.SP && TCmax > pat.TC && TCmin < )
+        public ScoreScale(string gender, string smoking, int agemin, int agemax, int syspresmin, int syspresmax, 
+                          double totalcholmin, double totalcholmax, int risk)
+            {
+            scaleGender = gender;
+            scaleSmoking = smoking;
+            ageMin = agemin;
+            ageMax = agemax;
+            systolicPressureMin = syspresmin;
+            systolicPressureMax = syspresmax;
+            totalCholesterolMin = totalcholmin;
+            totalCholesterolMax = totalcholmax;
+            scaleRisk = risk;
+            }
+
+            public bool Check (Patient patient)
+            { 
+             if (scaleGender == patient.gender && scaleSmoking == patient.smoking && ageMax > patient.age && ageMin < patient.age &&
+                systolicPressureMin < patient.systolicPressure && systolicPressureMax > patient.systolicPressure && 
+                totalCholesterolMin < patient.totalCholesterol && totalCholesterolMax > patient.totalCholesterol)
                 return true;
 
-            return false;
-            
-        }
+             return false;
+            }
 
     }
 }
