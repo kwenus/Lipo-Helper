@@ -19,7 +19,7 @@ namespace Lipo_Helper
                 Smoking = Console.ReadLine()   
             };
 
-            Cells patientRisk = new();
+            ScoreScale.Cell patientRisk = new();
             patientRisk.ShowRisk(patient);       //расcчёт индекса SCORE;
         }
     }
