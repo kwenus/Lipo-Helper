@@ -32,13 +32,12 @@ namespace Lipo_Helper
 
 
         public Patient(string genderParam, int ageParam, int systolicPresParam, 
-                       double tcParam, double ldParam, string smokingParam)
+                       double tcParam, string smokingParam)
         {
             gender = genderParam;
             age = ageParam;
             systolicPressure = systolicPresParam;
             totalCholesterol = tcParam;
-            lowDensityLipo = ldParam;
             smoking = smokingParam;
         }
 

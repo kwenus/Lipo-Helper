@@ -8,35 +8,24 @@ namespace Lipo_Helper
 {
     public class ScoreScale
     {
-        public string? scaleGender;
-        public string scaleSmoking;
-        public int ageMin;
-        public int ageMax;
-        public int systolicPressureMin;
-        public int systolicPressureMax;
-        public double totalCholesterolMin;
-        public double totalCholesterolMax;
-        public int scaleRisk;
+        public string? ScaleGender { get; set; }
+        public string? ScaleSmoking { get; set; }
+        public int AgeMin { get; set; }
+        public int AgeMax { get; set; }
+        public int SystolicPressureMin { get; set; }
+        public int SystolicPressureMax { get; set; }
+        public double TotalCholesterolMin { get; set; }
+        public double TotalCholesterolMax { get; set; }
+        public int ScaleRisk { get; set; }
 
-        public ScoreScale(string gender, string smoking, int agemin, int agemax, int syspresmin, int syspresmax, 
-                          double totalcholmin, double totalcholmax, int risk)
-            {
-            scaleGender = gender;
-            scaleSmoking = smoking;
-            ageMin = agemin;
-            ageMax = agemax;
-            systolicPressureMin = syspresmin;
-            systolicPressureMax = syspresmax;
-            totalCholesterolMin = totalcholmin;
-            totalCholesterolMax = totalcholmax;
-            scaleRisk = risk;
-            }
-
-            public bool Check (Patient patient)
+        public bool CheckOutScore (Patient patient)
             { 
-             if (scaleGender == patient.gender && scaleSmoking == patient.smoking && ageMax > patient.age && ageMin < patient.age &&
-                systolicPressureMin < patient.systolicPressure && systolicPressureMax > patient.systolicPressure && 
-                totalCholesterolMin < patient.totalCholesterol && totalCholesterolMax > patient.totalCholesterol)
+             if (ScaleGender == patient.gender && ScaleSmoking == patient.smoking && 
+                 AgeMin <= patient.age && AgeMax >= patient.age &&
+                 SystolicPressureMin <= patient.systolicPressure && 
+                 SystolicPressureMax >= patient.systolicPressure && 
+                 TotalCholesterolMin <= patient.totalCholesterol && 
+                 TotalCholesterolMax >= patient.totalCholesterol)
                 return true;
 
              return false;
