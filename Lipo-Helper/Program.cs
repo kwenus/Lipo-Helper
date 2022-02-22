@@ -10,13 +10,13 @@ namespace Lipo_Helper
     {
         static void Main(string[] args)
         {
-            Patient patient = new("n", 0, 0, 0, "n")
+            Patient patient = new()
             {
-                gender = Console.ReadLine(),
-                age = Convert.ToInt32(Console.ReadLine()),
-                systolicPressure = Convert.ToInt32(Console.ReadLine()),
-                totalCholesterol = Convert.ToDouble(Console.ReadLine()),
-                smoking = Console.ReadLine()   
+                Gender = Console.ReadLine(),
+                Age = Convert.ToInt32(Console.ReadLine()),
+                SystolicPressure = Convert.ToInt32(Console.ReadLine()),
+                TotalCholesterol = Convert.ToDouble(Console.ReadLine()),
+                Smoking = Console.ReadLine()   
             };
 
             Cells patientRisk = new();

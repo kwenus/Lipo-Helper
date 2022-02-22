@@ -18,14 +18,14 @@ namespace Lipo_Helper
         public double TotalCholesterolMax { get; set; }
         public int ScaleRisk { get; set; }
 
-        public bool CheckOutScore (Patient patient)
+        public bool CheckCell (Patient patient)
             { 
-             if (ScaleGender == patient.gender && ScaleSmoking == patient.smoking && 
-                 AgeMin <= patient.age && AgeMax >= patient.age &&
-                 SystolicPressureMin <= patient.systolicPressure && 
-                 SystolicPressureMax >= patient.systolicPressure && 
-                 TotalCholesterolMin <= patient.totalCholesterol && 
-                 TotalCholesterolMax >= patient.totalCholesterol)
+             if (ScaleGender == patient.Gender && ScaleSmoking == patient.Smoking && 
+                 AgeMin <= patient.Age && AgeMax >= patient.Age &&
+                 SystolicPressureMin <= patient.SystolicPressure && 
+                 SystolicPressureMax >= patient.SystolicPressure && 
+                 TotalCholesterolMin <= patient.TotalCholesterol && 
+                 TotalCholesterolMax >= patient.TotalCholesterol)
                 return true;
 
              return false;

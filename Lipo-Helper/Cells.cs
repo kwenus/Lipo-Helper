@@ -244,7 +244,7 @@ namespace Lipo_Helper
         {
             foreach (var item in cell)
             {
-                if (item.CheckOutScore(patient))
+                if (item.CheckCell(patient))
                 {
                     Console.WriteLine($"Your risk equals {item.ScaleRisk}%");
                     break;
