@@ -16,11 +16,19 @@ namespace Lipo_Helper
                 Age = Convert.ToInt32(Console.ReadLine()),
                 SystolicPressure = Convert.ToInt32(Console.ReadLine()),
                 TotalCholesterol = Convert.ToDouble(Console.ReadLine()),
-                Smoking = Console.ReadLine()   
+                LowDensityLipids = Convert.ToDouble(Console.ReadLine()),
+                Smoking = Convert.ToBoolean(Console.ReadLine()) 
             };
 
             ScoreScale.Cell patientRisk = new();
-            patientRisk.ShowRisk(patient);       //расcчёт индекса SCORE;
+            patientRisk.ShowTenYearRisk(patient);     //расcчёт индекса SCORE;
+
+
+            Therapy patientTherapy = new();
+            patientTherapy.PrescribeTherapy(patient);  //рассчёт лакарственной терапии;
+
+
+
         }
     }
 }

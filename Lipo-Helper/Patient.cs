@@ -14,15 +14,15 @@ namespace Lipo_Helper
         public int Age { get; set; }
         public int SystolicPressure { get; set; }
         public double TotalCholesterol { get; set; }
-        public double LowDensityLipo { get; set; }
-        public string? Smoking { get; set; }
+        public double LowDensityLipids { get; set; }
+        public bool Smoking { get; set; }
         public bool Diabetes { get; set; }
         public int DiabetesType { get; set; }
         public int DiabetesDuration { get; set; }
         public int GlomerularFiltrationRate { get; set; }
         public bool FamilialHypercholesterolemia { get; set; }
         public bool AcuteCoronarySyndrome { get; set; }
-        public bool RepetiveAuteCoronaySyndrome { get; set; }
+        public bool RepetiveACSinTwoYears { get; set; }
         public bool CoronaryArteryDisease { get; set; }
         public bool Stroke { get; set; }
         public bool TransientIschemicAttack { get; set; }

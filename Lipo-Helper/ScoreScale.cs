@@ -11,7 +11,7 @@ namespace Lipo_Helper
         public class CellData
         {
             public string? ScaleGender { get; set; }
-            public string? ScaleSmoking { get; set; }
+            public bool ScaleSmoking { get; set; }
             public int AgeMin { get; set; }
             public int AgeMax { get; set; }
             public int SystolicPressureMin { get; set; }
@@ -36,12 +36,12 @@ namespace Lipo_Helper
 
         public class Cell
         {
-           public List<CellData> cells = new()
+            public List<CellData> cells = new()
             {
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 40,
                     AgeMax = 49,
                     SystolicPressureMin = 120,
@@ -53,7 +53,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 50,
                     AgeMax = 54,
                     SystolicPressureMin = 120,
@@ -65,7 +65,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 55,
                     AgeMax = 59,
                     SystolicPressureMin = 120,
@@ -77,7 +77,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 60,
                     AgeMax = 64,
                     SystolicPressureMin = 120,
@@ -89,7 +89,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 65,
                     AgeMax = 100,
                     SystolicPressureMin = 120,
@@ -101,7 +101,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 40,
                     AgeMax = 49,
                     SystolicPressureMin = 120,
@@ -113,7 +113,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 50,
                     AgeMax = 54,
                     SystolicPressureMin = 120,
@@ -125,7 +125,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 55,
                     AgeMax = 59,
                     SystolicPressureMin = 120,
@@ -137,7 +137,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 60,
                     AgeMax = 64,
                     SystolicPressureMin = 120,
@@ -149,7 +149,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "female",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 65,
                     AgeMax = 100,
                     SystolicPressureMin = 120,
@@ -161,7 +161,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 40,
                     AgeMax = 49,
                     SystolicPressureMin = 120,
@@ -173,7 +173,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 50,
                     AgeMax = 54,
                     SystolicPressureMin = 120,
@@ -185,7 +185,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 55,
                     AgeMax = 59,
                     SystolicPressureMin = 120,
@@ -197,7 +197,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "no",
+                    ScaleSmoking = false,
                     AgeMin = 60,
                     AgeMax = 64,
                     SystolicPressureMin = 120,
@@ -209,7 +209,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 40,
                     AgeMax = 49,
                     SystolicPressureMin = 120,
@@ -221,7 +221,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 50,
                     AgeMax = 54,
                     SystolicPressureMin = 120,
@@ -233,7 +233,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 55,
                     AgeMax = 59,
                     SystolicPressureMin = 120,
@@ -245,7 +245,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 60,
                     AgeMax = 64,
                     SystolicPressureMin = 120,
@@ -257,7 +257,7 @@ namespace Lipo_Helper
                 new()
                 {
                     ScaleGender = "male",
-                    ScaleSmoking = "yes",
+                    ScaleSmoking = true,
                     AgeMin = 65,
                     AgeMax = 100,
                     SystolicPressureMin = 120,
@@ -268,13 +268,13 @@ namespace Lipo_Helper
                 },
             };
 
-            public void ShowRisk(Patient patient)
+            public void ShowTenYearRisk(Patient patient)
             {
                 foreach (var item in cells)
                 {
                     if (item.CheckData(patient))
                     {
-                        Console.WriteLine($"Your risk equals {item.ScaleRisk}%");
+                        Console.WriteLine($"Your 10 years risk of death equals to {item.ScaleRisk}%");
                         break;
                     }
                 }
