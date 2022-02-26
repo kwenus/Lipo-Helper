@@ -33,7 +33,7 @@ namespace Lipo_Helper
             {
                 MedicineName = "Rozuvastatinum",
                 MedicineDose = 40,
-                DecrementActivity = 0.45,
+                DecrementActivity = 0.42,
             },
             new()
             {

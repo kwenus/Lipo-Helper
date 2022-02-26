@@ -20,14 +20,26 @@ namespace Lipo_Helper
                 Smoking = Convert.ToBoolean(Console.ReadLine()) 
             };
 
-            ScoreScale.Cell patientRisk = new();
-            patientRisk.ShowTenYearRisk(patient);     //расcчёт индекса SCORE;
+            //расcчёт индекса SCORE;
 
+            ScoreScale.Cell patientRisk = new();
+            patientRisk.ShowTenYearRisk(patient);
+
+            //вариант 1: рассчёт лакарственной терапии;
 
             Therapy patientTherapy = new();
-            patientTherapy.PrescribeTherapy(patient);  //рассчёт лакарственной терапии;
+            patientTherapy.PrescribeTherapy(patient);
 
+            //вариант 2: рассчёт лекарственной терапии;
 
+            Statin rosuvastatin10 = new() { DrugName = "Rosuvastatin", DrugDose = 10, DrugDecrementActivity = 0.54 };
+            Statin rosuvastatin20 = new() { DrugName = "Rosuvastatin", DrugDose = 20, DrugDecrementActivity = 0.48 };
+            Statin rosuvastatin30 = new() { DrugName = "Rosuvastatin", DrugDose = 30, DrugDecrementActivity = 0.42 };
+
+            AbsorbtionInhibitor ezetemib = new() { DrugName = "Ezetemib", DrugDose = 10, DrugDecrementActivity = 0.78 };
+
+            Cumab alirocumab75 = new() { DrugName = "Ezetemib", DrugDose = 75, DrugDecrementActivity = 0.49 };
+            Cumab alirocumab150 = new() { DrugName = "Ezetemib", DrugDose = 150, DrugDecrementActivity = 0.39 };
 
         }
     }
