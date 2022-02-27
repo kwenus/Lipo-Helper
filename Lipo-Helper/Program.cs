@@ -37,6 +37,7 @@ namespace Lipo_Helper
                               $"to reach {patientTherapy.postTherapyLevel}.");
 
             //вариант 2: рассчёт лекарственной терапии;
+            //создание объектов препаратов;
 
             Statin rosuvastatin10 = new() { DrugName = "Rosuvastatin", DrugDose = 10, DrugDecrementActivity = 0.54F };
             Statin rosuvastatin20 = new() { DrugName = "Rosuvastatin", DrugDose = 20, DrugDecrementActivity = 0.48F };
@@ -47,19 +48,40 @@ namespace Lipo_Helper
             Cumab alirocumab75 = new() { DrugName = "Ezetemib", DrugDose = 75, DrugDecrementActivity = 0.49F };
             Cumab alirocumab150 = new() { DrugName = "Ezetemib", DrugDose = 150, DrugDecrementActivity = 0.39F };
 
-            rosuvastatin10.StatinReductionOfLipids(patient);
-            rosuvastatin20.StatinReductionOfLipids(patient);
-            float afterRos40Level = rosuvastatin40.StatinReductionOfLipids(patient);
-            ezetemib.AbsbInhReductionOfLipids(patient);
-            float afterTripleLevel = ezetemib.DoubleReductionOfLipids(patient, afterRos40Level);
-            alirocumab75.CumabReductionOfLipids(patient);
-            alirocumab150.CumabReductionOfLipids(patient);
-            alirocumab150.TripleReductionOfLipids(patient, afterTripleLevel);
-            Console.WriteLine(rosuvastatin40.postStatinLevel);
-            Console.WriteLine(ezetemib.postAbsInhLevel);
-            Console.WriteLine(ezetemib.postDualLevel);
-            Console.WriteLine(alirocumab150.postCumabLevel);
-            Console.WriteLine(alirocumab150.postTripleLevel);
+            //создание методов для делегата; 
+
+            Therapy.Medication Ros10med = ShowLevelAfterRos10;
+            Therapy.Medication Ros20med = ShowLevelAfterRos20;
+            Therapy.Medication Ros40med = ShowLevelAfterRos40;
+
+            Therapy.Medication Ezetmed = ShowLevelAfterEzet;
+            Therapy.Medication Ros10Ezetmed = ShowDualRos10Ezet;
+            Therapy.Medication Ros20Ezetmed = ShowDualRos20Ezet;
+            Therapy.Medication Ros40Ezetmed = ShowDualRos40Ezet;
+
+            Therapy.Medication Aliro75med = ShowLevelAfterAliro75;
+            Therapy.Medication Aliro150med = ShowLevelAfterAliro150;
+            Therapy.Medication Ros40EzetAliro75med = ShowTripleRos40EzetAliro75;
+            Therapy.Medication Ros40EzetAliro150med = ShowTripleRos40EzetAliro150;
+
+
+
+            float ShowLevelAfterRos10() => rosuvastatin10.StatinReductionOfLipids(patient);
+            float ShowLevelAfterRos20() => rosuvastatin20.StatinReductionOfLipids(patient);
+            float ShowLevelAfterRos40() => rosuvastatin40.StatinReductionOfLipids(patient);
+
+            float ShowLevelAfterEzet() => ezetemib.AbsInhReductionOfLipids(patient);
+            float ShowDualRos10Ezet() => ezetemib.DoubleReductionOfLipids(Ros10med);
+            float ShowDualRos20Ezet() => ezetemib.DoubleReductionOfLipids(Ros20med);
+            float ShowDualRos40Ezet() => ezetemib.DoubleReductionOfLipids(Ros40med);
+
+            float ShowLevelAfterAliro75() => alirocumab75.CumabReductionOfLipids(patient);
+            float ShowTripleRos40EzetAliro75() => alirocumab75.TripleReductionOfLipids(Ros40Ezetmed);
+            float ShowLevelAfterAliro150() => alirocumab150.CumabReductionOfLipids(patient);
+            float ShowTripleRos40EzetAliro150() => alirocumab150.TripleReductionOfLipids(Ros40Ezetmed);
+
+            //использование делегатов
+
         }
     }
 }

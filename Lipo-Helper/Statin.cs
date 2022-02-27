@@ -8,11 +8,6 @@ namespace Lipo_Helper
 {
     public class Statin : LipidLoweringDrug
     {
-        public float postStatinLevel;
-         public float StatinReductionOfLipids(Patient patient)
-        {
-           postStatinLevel = patient.LowDensityLipids * DrugDecrementActivity;
-           return postStatinLevel;
-        }
+         public float StatinReductionOfLipids(Patient patient) => patient.LowDensityLipids * DrugDecrementActivity;
     }
 }

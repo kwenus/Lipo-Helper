@@ -8,19 +8,8 @@ namespace Lipo_Helper
 {
     public class AbsorbtionInhibitor : LipidLoweringDrug
     {
-        public float postAbsInhLevel;
-        float postStatinLevel;
-        public float postDualLevel;
-        public float AbsbInhReductionOfLipids(Patient patient)
-        {
-           postAbsInhLevel = patient.LowDensityLipids * DrugDecrementActivity;
-           return postAbsInhLevel;
-        }
+        public float AbsInhReductionOfLipids(Patient patient) => patient.LowDensityLipids * DrugDecrementActivity;
 
-        public float DoubleReductionOfLipids(Patient patient, float postStatinLevel)
-        {
-            postDualLevel = postStatinLevel * DrugDecrementActivity;
-            return postDualLevel;
-        }
+        public float DoubleReductionOfLipids(Therapy.Medication med) => med() * DrugDecrementActivity;
     }
 }

@@ -8,6 +8,10 @@ namespace Lipo_Helper
 {
     public class Therapy
     {
+
+        public delegate float Medication();
+
+
         public class Medicine
         {
             public string? MedicineName { get; set; }

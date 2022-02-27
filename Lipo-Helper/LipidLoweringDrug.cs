@@ -13,14 +13,7 @@ namespace Lipo_Helper
 
         public float DrugDecrementActivity { get; set; }
 
-        public float postTherapyLevel;
-        public float postStatinTherapy;
-
-        public virtual float ReductionOfLipids(Patient patient)
-        {
-            postStatinTherapy = patient.LowDensityLipids * DrugDecrementActivity;
-            return postStatinTherapy;
-        }
+        public virtual float ReductionOfLipids(Patient patient) => patient.LowDensityLipids * DrugDecrementActivity;
 
     }
 }
