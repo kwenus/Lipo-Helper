@@ -12,7 +12,7 @@ namespace Lipo_Helper
         {
             public string? MedicineName { get; set; }
             public int MedicineDose { get; set; }
-            public double DecrementActivity { get; set; }
+            public float DecrementActivity { get; set; }
         }
 
         public List<Medicine> medicines = new()
@@ -21,43 +21,43 @@ namespace Lipo_Helper
             {
                 MedicineName = "Rozuvastatinum",
                 MedicineDose = 10,
-                DecrementActivity = 0.54,
+                DecrementActivity = 0.54F,
             },
             new()
             {
                 MedicineName = "Rozuvastatinum",
                 MedicineDose = 20,
-                DecrementActivity = 0.48,
+                DecrementActivity = 0.48F,
             },
             new()
             {
                 MedicineName = "Rozuvastatinum",
                 MedicineDose = 40,
-                DecrementActivity = 0.42,
+                DecrementActivity = 0.42F,
             },
             new()
             {
                 MedicineName = "Ezetemibe",
                 MedicineDose = 10,
-                DecrementActivity = 0.78,
+                DecrementActivity = 0.78F,
             },
             new()
             {
                 MedicineName = "Alirocumab",
                 MedicineDose = 75,
-                DecrementActivity = 0.49,
+                DecrementActivity = 0.49F,
             },
             new()
             {
                 MedicineName = "Alirocumab",
                 MedicineDose = 150,
-                DecrementActivity = 0.39,
+                DecrementActivity = 0.39F,
             },
         };
 
 
         public int med;
-        public double postTherapyLevel;
+        public float postTherapyLevel;
         public void PrescribeTherapy(Patient patient)
         {
             postTherapyLevel = patient.LowDensityLipids;
@@ -72,8 +72,6 @@ namespace Lipo_Helper
                     postTherapyLevel *= medicines[med].DecrementActivity;
                 }
             }
-                Console.WriteLine($"Patient needs {medicines[med].MedicineName} " +
-                        $"{medicines[med].MedicineDose}mg to reach {postTherapyLevel}.");
         }
     }
 }

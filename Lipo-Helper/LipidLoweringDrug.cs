@@ -11,17 +11,16 @@ namespace Lipo_Helper
         public string? DrugName { get; set; }
         public int DrugDose { get; set; }
 
-        public double DrugDecrementActivity { get; set; }
+        public float DrugDecrementActivity { get; set; }
 
-        double postTherapyLevel;
+        public float postTherapyLevel;
+        public float postStatinTherapy;
 
-        public virtual double ReductionOfLipids(Patient patient)
+        public virtual float ReductionOfLipids(Patient patient)
         {
-            postTherapyLevel = patient.LowDensityLipids * DrugDecrementActivity;
-            return postTherapyLevel;
+            postStatinTherapy = patient.LowDensityLipids * DrugDecrementActivity;
+            return postStatinTherapy;
         }
-
-        //public  double ReductionOfLipidsWithStatins (Patient patient)
 
     }
 }

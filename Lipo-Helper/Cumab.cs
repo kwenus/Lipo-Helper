@@ -8,12 +8,20 @@ namespace Lipo_Helper
 {
     public class Cumab : LipidLoweringDrug
     {
-        double postCumabLevel;
+        public float postCumabLevel;
+        float postDualLevel;
+        public float postTripleLevel;
 
-        public double CumabReductionOfLipids1(Patient patient)
+        public float CumabReductionOfLipids(Patient patient)
         {
             postCumabLevel = patient.LowDensityLipids * DrugDecrementActivity;
             return postCumabLevel;
+        }
+
+        public float TripleReductionOfLipids(Patient patient, float postDualLevel)
+        {
+            postTripleLevel = postDualLevel * DrugDecrementActivity;
+            return postTripleLevel;
         }
     }
 }

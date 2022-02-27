@@ -13,8 +13,8 @@ namespace Lipo_Helper
         public string? Gender { get; set; }
         public int Age { get; set; }
         public int SystolicPressure { get; set; }
-        public double TotalCholesterol { get; set; }
-        public double LowDensityLipids { get; set; }
+        public float TotalCholesterol { get; set; }
+        public float LowDensityLipids { get; set; }
         public bool Smoking { get; set; }
         public bool Diabetes { get; set; }
         public int DiabetesType { get; set; }
