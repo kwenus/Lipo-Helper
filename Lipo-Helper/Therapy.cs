@@ -56,24 +56,24 @@ namespace Lipo_Helper
         };
 
 
-
+        public int med;
+        public double postTherapyLevel;
         public void PrescribeTherapy(Patient patient)
         {
-            int i;
-            double postTherapyLevel = patient.LowDensityLipids;
-            for (i = 0; postTherapyLevel > 1.4; i++)
+            postTherapyLevel = patient.LowDensityLipids;
+            for (med = 0; postTherapyLevel > 1.4; med++)
             {
-                if (medicines[i].MedicineName == "Rozuvastatinum")
+                if (medicines[med].MedicineName == "Rozuvastatinum")
                 {
-                    postTherapyLevel = patient.LowDensityLipids * medicines[i].DecrementActivity;
+                    postTherapyLevel = patient.LowDensityLipids * medicines[med].DecrementActivity;
                 }
                 else
                 {
-                    postTherapyLevel *= medicines[i].DecrementActivity;
+                    postTherapyLevel *= medicines[med].DecrementActivity;
                 }
             }
-                Console.WriteLine($"Patient needs {medicines[i].MedicineName} " +
-                        $"{medicines[i].MedicineDose}mg to reach {postTherapyLevel}.");
+                Console.WriteLine($"Patient needs {medicines[med].MedicineName} " +
+                        $"{medicines[med].MedicineDose}mg to reach {postTherapyLevel}.");
         }
     }
 }

@@ -12,12 +12,9 @@ namespace Lipo_Helper
 
         public double AbsbInhReductionOfLipids1(Patient patient)
         {
-           postAbsInhLevel1 = patient.LowDensityLipids * DrugDecrementActivity1;
+           postAbsInhLevel1 = patient.LowDensityLipids * DrugDecrementActivity;
            return postAbsInhLevel1;
         }
-
-
-
         
     }
 }

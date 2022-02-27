@@ -25,21 +25,29 @@ namespace Lipo_Helper
             ScoreScale.Cell patientRisk = new();
             patientRisk.ShowTenYearRisk(patient);
 
+
             //вариант 1: рассчёт лакарственной терапии;
+
 
             Therapy patientTherapy = new();
             patientTherapy.PrescribeTherapy(patient);
+
+            Console.WriteLine($"Patient needs {patientTherapy.medicines[patientTherapy.med].MedicineName} " +
+                              $"{patientTherapy.medicines[patientTherapy.med].MedicineDose}mg " +
+                              $"to reach {patientTherapy.postTherapyLevel}.");
 
             //вариант 2: рассчёт лекарственной терапии;
 
             Statin rosuvastatin10 = new() { DrugName = "Rosuvastatin", DrugDose = 10, DrugDecrementActivity = 0.54 };
             Statin rosuvastatin20 = new() { DrugName = "Rosuvastatin", DrugDose = 20, DrugDecrementActivity = 0.48 };
-            Statin rosuvastatin30 = new() { DrugName = "Rosuvastatin", DrugDose = 30, DrugDecrementActivity = 0.42 };
+            Statin rosuvastatin40 = new() { DrugName = "Rosuvastatin", DrugDose = 40, DrugDecrementActivity = 0.42 };
 
             AbsorbtionInhibitor ezetemib = new() { DrugName = "Ezetemib", DrugDose = 10, DrugDecrementActivity = 0.78 };
 
             Cumab alirocumab75 = new() { DrugName = "Ezetemib", DrugDose = 75, DrugDecrementActivity = 0.49 };
             Cumab alirocumab150 = new() { DrugName = "Ezetemib", DrugDose = 150, DrugDecrementActivity = 0.39 };
+
+
 
         }
     }

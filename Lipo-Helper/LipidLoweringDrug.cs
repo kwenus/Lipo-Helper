@@ -23,8 +23,5 @@ namespace Lipo_Helper
 
         //public  double ReductionOfLipidsWithStatins (Patient patient)
 
-
-
-
     }
 }
