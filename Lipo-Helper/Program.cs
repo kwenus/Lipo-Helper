@@ -8,31 +8,49 @@ namespace Lipo_Helper
 {
     class Program
     {
-        //public event Note? RiskWarning;
         static void Main(string[] args)
         {
-            Patient patient = new()
-            {
-                Gender = Console.ReadLine(),
-                Age = Convert.ToInt32(Console.ReadLine()),
-                SystolicPressure = Convert.ToInt32(Console.ReadLine()),
-                TotalCholesterol = Convert.ToSingle(Console.ReadLine()),
-                LowDensityLipids = Convert.ToSingle(Console.ReadLine()),
-                Smoking = Convert.ToBoolean(Console.ReadLine()),
-                Diabetes = Convert.ToBoolean(Console.ReadLine()),
-                DiabetesType = Convert.ToInt32(Console.ReadLine()),
-                DiabetesDuration = Convert.ToInt32(Console.ReadLine()),
-                GlomerularFiltrationRate = Convert.ToInt32(Console.ReadLine()),
-                FamilialHypercholesterolemia = Convert.ToBoolean(Console.ReadLine()),
-                AcuteCoronarySyndrome = Convert.ToBoolean(Console.ReadLine()),
-                RepetiveACSinTwoYears = Convert.ToBoolean(Console.ReadLine()),
-                CoronaryArteryDisease = Convert.ToBoolean(Console.ReadLine()),
-                Stroke = Convert.ToBoolean(Console.ReadLine()),
-                TransientIschemicAttack = Convert.ToBoolean(Console.ReadLine()),
-                PeripheralArteryDisease = Convert.ToBoolean(Console.ReadLine()),
-                Atherosclerosis = Convert.ToBoolean(Console.ReadLine()),
-                PercentageArteryStenosis = Convert.ToInt32(Console.ReadLine())
-            };
+            Patient patient = new();
+
+            Console.WriteLine("Gender");
+            patient.Gender = Console.ReadLine();
+            Console.WriteLine("Age");
+            patient.Age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Systolic Pressure");
+            patient.SystolicPressure = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Total Cholesterol");
+            patient.TotalCholesterol = Convert.ToSingle(Console.ReadLine());
+            Console.WriteLine("Low Density Lipids");
+            patient.LowDensityLipids = Convert.ToSingle(Console.ReadLine());
+            Console.WriteLine("Smoking");
+            patient.Smoking = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Diabetes");
+            patient.Diabetes = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Diabetes Type");
+            patient.DiabetesType = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Diabetes Duration");
+            patient.DiabetesDuration = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Glomerular Filtration Rate");
+            patient.GlomerularFiltrationRate = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Familial Hypercholesterolemia");
+            patient.FamilialHypercholesterolemia = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Acute Coronary Syndrome ");
+            patient.AcuteCoronarySyndrome = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Repetive ACS in 2 years ");
+            patient.RepetiveACSinTwoYears = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Coronary Artery Disease");
+            patient.CoronaryArteryDisease = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Stroke");
+            patient.Stroke = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Transient Ischemic Attack");
+            patient.TransientIschemicAttack = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Peripheral Artery Disease");
+            patient.PeripheralArteryDisease = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Atherosclerosis");
+            patient.Atherosclerosis = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Percentage Artery Stenosis");
+            patient.PercentageArteryStenosis = Convert.ToInt32(Console.ReadLine());
+
 
             //расcчёт индекса SCORE;
 
@@ -84,15 +102,28 @@ namespace Lipo_Helper
             bool Check18() => examine.CheckEighteen(patient);
             bool Check19() => examine.CheckNineteen(patient);
 
+
+            void WarningMassage(string note)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(note);
+                Console.ResetColor();
+            }
+
+            examine.RiskWarning += WarningMassage;
+
+
             for (  int i = 0; i < 20; i++)
             {
                 if (check[i]())
                 {
-                    Console.WriteLine($"Your patient have {patient.Risk} risk level. Therapy must gain {patient.LowLipidsRate} level to decrease cardio-vascular risks.");
+                    Console.WriteLine($"Your patient have {patient.Risk} risk." +
+                                      $" Therapy must gain {patient.LowLipidsRate} level to decrease posibility of cardio-vascular death.");
                     break;
                 }
             }
 
+            examine.RiskWarning -= WarningMassage;
 
             //вариант 1: рассчёт лакарственной терапии;
 

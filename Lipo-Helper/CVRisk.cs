@@ -7,16 +7,21 @@ using System.Threading.Tasks;
 namespace Lipo_Helper
 {
     public delegate bool CardioVascularRisk();
-    public delegate void Note(string note);
 
     public class CVRisk
     {
+
+        public delegate void Note(string note);
+        public event Note? RiskWarning;
+
+
         public bool CheckOne(Patient patient)
         {
             if (patient.RepetiveACSinTwoYears)
             {
                 patient.Risk = "extreme";
                 patient.LowLipidsRate = 1.1F;
+                RiskWarning?.Invoke("Warning!!! This patient need ThirdLevel Therapy to cease risk of death.");
                 return true;
             }
             else return false;
@@ -27,6 +32,7 @@ namespace Lipo_Helper
             {
                 patient.Risk = "extreme";
                 patient.LowLipidsRate = 1.1F;
+                RiskWarning?.Invoke("Warning!!! This patient need ThirdLevel Therapy to cease risk of death.");
                 return true;
             }
             else return false;
