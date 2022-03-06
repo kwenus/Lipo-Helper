@@ -29,6 +29,9 @@ namespace Lipo_Helper
         public bool PeripheralArteryDisease { get; set; }
         public bool Atherosclerosis { get; set; }
         public int PercentageArteryStenosis { get; set; }
+        public string? Risk { get; set; }
+        public float LowLipidsRate { get; set; } 
+        public int ScoreRate { get; set; }
     }
 }
 

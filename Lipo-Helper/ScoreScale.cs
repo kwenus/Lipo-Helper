@@ -268,7 +268,8 @@ namespace Lipo_Helper
                 {
                     if (item.CheckData(patient))
                     {
-                        Console.WriteLine($"Your 10 years risk of death equals to {item.ScaleRisk}%");
+                        Console.WriteLine($"Your risk of death in 10 years equals to {item.ScaleRisk}%");
+                        patient.ScoreRate = item.ScaleRisk;
                         break;
                     }
                 }

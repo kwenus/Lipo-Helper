@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lipo_Helper
 {
+    public delegate void Medication();
+    public delegate float Precription();
     public class Therapy
     {
-
-        public delegate float Medication();
-
-
         public class Medicine
         {
             public string? MedicineName { get; set; }

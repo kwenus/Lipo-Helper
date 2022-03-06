@@ -10,7 +10,7 @@ namespace Lipo_Helper
     {
         public float CumabReductionOfLipids(Patient patient) => patient.LowDensityLipids * DrugDecrementActivity;
 
-        public float TripleReductionOfLipids(Therapy.Medication med) => med() * DrugDecrementActivity;
+        public float TripleReductionOfLipids(Precription med) => med() * DrugDecrementActivity;
     }
 }
 

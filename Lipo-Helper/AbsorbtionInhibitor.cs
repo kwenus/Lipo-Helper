@@ -10,6 +10,6 @@ namespace Lipo_Helper
     {
         public float AbsInhReductionOfLipids(Patient patient) => patient.LowDensityLipids * DrugDecrementActivity;
 
-        public float DoubleReductionOfLipids(Therapy.Medication med) => med() * DrugDecrementActivity;
+        public float DoubleReductionOfLipids(Precription med) => med() * DrugDecrementActivity;
     }
 }
